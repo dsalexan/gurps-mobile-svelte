@@ -1,4 +1,12 @@
+// @ts-nocheck
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable camelcase */
+
 import fs from "fs-extra"
 import { svelte } from "@sveltejs/vite-plugin-svelte"
 import resolve from "@rollup/plugin-node-resolve" // This resolves NPM modules from node_modules.
@@ -8,7 +16,6 @@ import topLevelAwait from "vite-plugin-top-level-await"
 
 import { MODULE_ID } from "./config"
 import path from "path"
-import glob from "glob"
 
 const FOUNDRY = fs.readJSONSync(`foundryconfig.json`)
 const STATIC_SUBDIRECTORIES = fs.readdirSync(path.join(__dirname, `static`)).filter(name => fs.statSync(path.join(__dirname, `static`, name)).isDirectory())

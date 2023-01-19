@@ -10,15 +10,21 @@
     "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)"
   ],
   "dependencies": {
+    "@tsconfig/svelte": "^3.0.0",
     "@typhonjs-fvtt/runtime": "^0.0.20",
     "@typhonjs-fvtt/svelte-standard": "^0.0.16",
+    "eslint-plugin-svelte": "^2.14.1",
+    "gurps": "link:D:\\dsalexan\\Code\\foundry\\gurps",
+    "prettier-plugin-svelte": "^2.9.0",
     "svelte": "^3.52.0",
-    "typescript": "*",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4",
     "vite-plugin-top-level-await": "^1.2.2",
     "yarn-run-all": "^3.1.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "@typhonjs-config/eslint-config": "^0.3.0",
     "@typhonjs-fvtt/eslint-config-foundry.js": "^0.8.0",
@@ -31,6 +37,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-svelte3": "^4.0.0",
     "fs-extra": "^11.1.0",
     "gulp": "^4.0.2",
     "gulp-replace": "^1.1.4",
