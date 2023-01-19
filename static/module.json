@@ -28,8 +28,7 @@
     }]
   },
   "esmodules": [
-    "index.js",
-    "index.ts"
+    "index.js"
   ],
   "scripts": [
     "__GULP__STATIC_SCRIPTS__"

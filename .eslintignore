@@ -9,3 +9,5 @@ templates/
 src/**/*.svelte
 /index.js
 /index.js.map
+static/
+dist/

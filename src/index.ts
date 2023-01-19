@@ -11,14 +11,9 @@ import { MODULE_ID } from "../config"
  * Launches and positions the main `essential-svelte-esm` menu app to the left of the sidebar.
  */
 Hooks.once(`ready`, () => {
-  console.log(`SVELTE TESTS 6`)
+  console.log(`SVELTE TESTS 7`)
   const sidebarRect = document.querySelector(`#sidebar`).getBoundingClientRect()
   //   new MenuApplication({ left: sidebarRect.x - 235, top: sidebarRect.y }).render(true, { focus: true })
 })
 
-console.error(`PAGE RELOADED again? vambora 5`)
-
-if (import.meta.hot) {
-  import.meta.hot
-  // import.meta.hot.on()
-}
+console.error(`PAGE RELOADED again? vambora 8`)
