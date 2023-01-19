@@ -4,6 +4,7 @@ import { svelte } from "@sveltejs/vite-plugin-svelte"
 import resolve from "@rollup/plugin-node-resolve" // This resolves NPM modules from node_modules.
 import preprocess from "svelte-preprocess"
 import { postcssConfig, terserConfig, typhonjsRuntime } from "@typhonjs-fvtt/runtime/rollup"
+import topLevelAwait from "vite-plugin-top-level-await"
 
 import { MODULE_ID } from "./config"
 import path from "path"
@@ -41,7 +42,7 @@ export default () => {
     resolve: { conditions: [`import`, `browser`] },
 
     esbuild: {
-      target: [`es2022`, `chrome100`],
+      target: [`esnext`],
       keepNames: true, // Note: doesn't seem to work.
     },
 
@@ -65,6 +66,11 @@ export default () => {
         [`^(?!/modules/${MODULE_ID}/)`]: `http://localhost:30000`,
         "/socket.io": { target: `ws://localhost:30000`, ws: true },
       },
+      hmr: true,
+      watch: {
+        //   cwd: `./src`,
+        //   followSymlinks: true,
+      },
     },
 
     build: {
@@ -73,7 +79,7 @@ export default () => {
       sourcemap: s_SOURCEMAPS,
       brotliSize: true,
       minify: s_COMPRESS ? `terser` : false,
-      target: [`es2022`, `chrome100`],
+      target: [`esnext`],
       terserOptions: s_COMPRESS ? { ...terserConfig(), ecma: 2022 } : void 0,
       lib: {
         entry: `./index.js`,
@@ -90,6 +96,23 @@ export default () => {
     // },
 
     plugins: [
+      function HMR() {
+        return {
+          name: `hmr`,
+          enforce: `post`,
+          // HMR
+          handleHotUpdate({ file, server, ...args }) {
+            console.log(file, args)
+            if (file.endsWith(`.js`)) server.ws.send({ type: `full-reload`, path: `*` })
+          },
+        }
+      },
+      topLevelAwait({
+        // The export name of top-level await promise for each chunk module
+        promiseExportName: `__tla`,
+        // The function to generate import names of top-level await promise in each chunk module
+        promiseImportName: i => `__tla_${i}`,
+      }),
       svelte({
         preprocess: preprocess(),
         onwarn: (warning, handler) => {

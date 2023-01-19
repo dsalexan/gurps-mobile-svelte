@@ -4,18 +4,18 @@
  * @type {{moduleId: string, moduleLabel: string}}
  */
 const constants = {
-   moduleId: 'essential-svelte-esm',
-   moduleLabel: `Essential Svelte (ESM)`
-};
+  moduleId: `essential-svelte-esm`,
+  moduleLabel: `Essential Svelte (ESM)`,
+}
 
 /**
  * @type {ESSessionConstants} Defines all the module session storage static constants.
  */
 const sessionConstants = {
-   themeDarkMode: `${constants.moduleId}.theme.dark`
-};
+  themeDarkMode: `${constants.moduleId}.theme.dark`,
+}
 
-export { constants, sessionConstants };
+export { constants, sessionConstants }
 
 /**
  * @typedef {object} ESSessionConstants
