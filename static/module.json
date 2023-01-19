@@ -1,0 +1,52 @@
+{
+  "id": "__GULP__MODULE_ID__",
+  "name": "__GULP__MODULE_NAME__",
+  "title": "__GULP__MODULE_TITLE__",
+  "description": "__GULP__MODULE_DESCRIPTION__",
+  "author": "dsalexan",
+  "authors": [
+    {
+      "name": "dsalexan - dsalexan#8004",
+      "url": "https://github.com/dsalexan"
+    }
+  ],
+  "url": "https://github.com/typhonjs-fvtt-demo/essential-svelte-esm",
+  "readme": "https://github.com/typhonjs-fvtt-demo/essential-svelte-esm/blob/master/README.md",
+  "bugs": "https://github.com/typhonjs-fvtt-demo/essential-svelte-esm/issues",
+  "changelog": "https://github.com/typhonjs-fvtt-demo/essential-svelte-esm/releases/latest/",
+  "version": "__GULP__MODULE_VERSION__",
+  "minimumCoreVersion": "9",
+  "compatibleCoreVersion": "9",
+  "compatibility": {
+    "minimum": "9",
+    "verified": "10"
+  },
+  "relationships": {
+    "requires": [{
+      "id": "lib-wrapper",
+      "type": "module"
+    }]
+  },
+  "esmodules": [
+    "index.js"
+  ],
+  "scripts": [
+    "__GULP__STATIC_SCRIPTS__"
+  ],
+  "styles": [
+    
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": true,
+  "manifest": "https://github.com/typhonjs-fvtt-demo/essential-svelte-esm/releases/latest/download/module.json",
+  "download": "https://github.com/typhonjs-fvtt-demo/essential-svelte-esm/releases/download/0.0.14/module.zip",
+  "protected": false,
+  "coreTranslation": false,
+  "library": false
+}
